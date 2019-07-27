@@ -11,11 +11,10 @@
         <!-- DB schema will be updated if needed -->
         <property name="hbm2ddl.auto">update</property>
         <!---->
-        <mapping class="model.Continent"/>
         <mapping class="model.Country"/>
         <mapping class="model.City"/>
-        <mapping class="model.Hotel"/>
-        <mapping class="model.Trip"/>
+        <!--<mapping class="model.Hotel"/>-->
+        <!--<mapping class="model.Trip"/>-->
 
 
     </session-factory>

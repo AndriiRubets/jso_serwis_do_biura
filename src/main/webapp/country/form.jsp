@@ -12,6 +12,7 @@
 </head>
 <body>
 <%@include file="/header.jsp"%>
+<%= wypiszPasekNawigacyjny()%>
 
 <form action="/country/add" method="post">
     Name of Country:  <input type="text" name="name"><br>
