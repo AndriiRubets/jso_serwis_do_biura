@@ -1,6 +1,7 @@
 
 <%@ page import="java.util.List" %>
-<%@ page import="model.City" %><%--
+<%@ page import="model.City" %>
+<%@ page import="model.Country" %><%--
   Created by IntelliJ IDEA.
   User: ar
   Date: 21.07.2019
@@ -11,6 +12,12 @@
 <html>
 <head>
     <title>Hotel Form</title>
+    <script>
+        function reloadCountry(selectedCountry) {
+            var selectedText = selectedCountry.options[selectedCountry.selectedIndex].value;
+            window.location.href = "/hotel/add?countryId=" + selectedText;
+        }
+    </script>
 </head>
 <body>
 <%@include file="/header.jsp" %>
@@ -20,6 +27,23 @@
     Name of Hotel: <input type="text" name="name"><br>
     Number of stars: <input type="number" min="1" max="5" step="1" name="stars"><br>
     Description: <input type="text" name="description"><br>
+
+
+
+    Select Country: <select name="countryId" onchange="reloadCountry(this)">
+    <option value=""></option>
+    <%
+        List<Country> countries = (List<Country>) request.getAttribute("countryList");
+        for (Country c : countries) {
+    %>
+    <option value="<%=c.getId()%>"><%=c.getName() %>
+    </option>
+    <%
+        }
+    %>
+</select><br>
+
+
 
 
     Select City: <select name="cityId">

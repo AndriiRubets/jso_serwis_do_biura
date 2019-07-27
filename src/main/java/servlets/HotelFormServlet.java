@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @WebServlet("/hotel/add")
 public class HotelFormServlet extends HttpServlet {
@@ -19,8 +20,18 @@ public class HotelFormServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setAttribute("countryList", dao.findAll(Country.class));
+        if (req.getParameter("countryId") != null) {
+            Long countryId = Long.valueOf(req.getParameter("countryId"));
+            req.setAttribute("cityList",
+                    dao.findAll(City.class)
+                            .stream()
+                            .filter(city -> city.getCountry().getId().equals(countryId))
+                            .collect(Collectors.toList()));
+        }else {
+            req.setAttribute("cityList", dao.findAll(City.class));
+        }
 
-        req.setAttribute("cityList", dao.findAll(City.class));
         req.getRequestDispatcher("/hotel/form.jsp").forward(req, resp);
     }
 

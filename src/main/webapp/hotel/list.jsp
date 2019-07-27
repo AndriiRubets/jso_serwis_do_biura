@@ -44,7 +44,7 @@
             out.print("<td>" + h.getName() + "</td>");
             out.print("<td>" + h.getStars()+ "</td>");
             out.print("<td>" + h.getDescription()+ "</td>");
-            out.print("<td>" + h.getCity()+ "</td>");
+            out.print("<td>" + h.getCity().getName()+ "</td>");
             out.print("<td>" +
                     "<a href=\"/hotel/remove?hotelId=" + h.getId() + "\">Remove</a>" +
                     "</td>");
