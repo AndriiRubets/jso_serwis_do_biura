@@ -12,7 +12,7 @@
                 "<a href=\"/city/list\">City</a>\n" +
                 "</td>\n" +
                 "<td width=\"170px\">\n " +
-                "<a href=\"/hotel/list\">Hostel</a>\n" +
+                "<a href=\"/hotel/list\">Hotel</a>\n" +
                 "</td>\n");
         for (int i = 0; i < dodatkoweLinki.length; i += 2) {
             builder.append("<td width=\"170px\">\n " +
