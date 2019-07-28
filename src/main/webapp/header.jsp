@@ -6,13 +6,16 @@
                 "<a href=\"/index\">Index</a>\n" +
                 "</td>\n" +
                 "<td width=\"170px\">\n " +
-                "<a href=\"/country/list\">Country</a>\n" +
+                "<a href=\"/country/list\">Countries</a>\n" +
                 "</td>\n" +
                 "<td width=\"170px\">\n " +
-                "<a href=\"/city/list\">City</a>\n" +
+                "<a href=\"/city/list\">Cities</a>\n" +
                 "</td>\n" +
                 "<td width=\"170px\">\n " +
-                "<a href=\"/hotel/list\">Hotel</a>\n" +
+                "<a href=\"/hotel/list\">Hotels</a>\n" +
+                "</td>\n"+
+                "<td width=\"170px\">\n " +
+                "<a href=\"/trip/list\">Trips</a>\n" +
                 "</td>\n");
         for (int i = 0; i < dodatkoweLinki.length; i += 2) {
             builder.append("<td width=\"170px\">\n " +

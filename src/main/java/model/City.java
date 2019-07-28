@@ -31,4 +31,5 @@ public class City implements IBaseEntity {
     @Cascade(org.hibernate.annotations.CascadeType.DELETE)
     private List<Hotel> hotels;
 
+
 }

@@ -14,7 +14,7 @@
         <mapping class="model.Country"/>
         <mapping class="model.City"/>
         <mapping class="model.Hotel"/>
-        <!--<mapping class="model.Trip"/>-->
+        <mapping class="model.Trip"/>
 
 
     </session-factory>
